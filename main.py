@@ -3,7 +3,8 @@ from fastapi import FastAPI , Query
 # pydantic لتحسين الكود
 from pydantic import BaseModel
 #اعداد CORS للسماح بطلبات من متصفح الويب
-#from fastapi.middleware.cors import CORSMiddleware
+from fastapi.middleware.cors import CORSMiddleware
+
 import uvicorn
 
 class BMIOutput(BaseModel):
@@ -11,6 +12,18 @@ class BMIOutput(BaseModel):
     message: str
 
 app = FastAPI()
+
+origins = [
+    "null",  # للسماح بالملفات المحلية
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 #app.add_middleware(
 #    CORSMiddleware,
