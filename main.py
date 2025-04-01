@@ -14,7 +14,9 @@ class BMIOutput(BaseModel):
 app = FastAPI()
 
 origins = [
-    "null",  # للسماح بالملفات المحلية
+    "https://your-render-app-name.onrender.com",  # السماح من أصل تطبيق Render الخاص بك
+    "http://localhost",
+    "http://localhost:8080",
 ]
 
 app.add_middleware(
