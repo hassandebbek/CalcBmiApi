@@ -14,7 +14,7 @@ class BMIOutput(BaseModel):
 app = FastAPI()
 
 origins = [
-    "https://your-render-app-name.onrender.com",  # السماح من أصل تطبيق Render الخاص بك
+    "https://calcbmiapi.onrender.com",  # السماح من أصل تطبيق Render الخاص بك
     "http://localhost",
     "http://localhost:8080",
 ]
